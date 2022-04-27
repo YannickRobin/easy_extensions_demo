@@ -1,7 +1,7 @@
 INSERT_UPDATE EasyRestGroup;Name[unique=true]
                            ;Easy
 
-INSERT_UPDATE EasyRest  ;Name[unique=true];easyRestGroup(name);Path[unique=true];SSL;Method(code);AuthenticationMethod(code);Format(code);ContentType(code);SpringBean;Script;SwaggerSummary;SwaggerDescription;SwaggerParameters[allownull=true];SwaggerRequestSchema[allownull=true];SwaggerResponses[allownull=true]
+INSERT_UPDATE EasyRest  ;Name[unique=true];easyRestGroup(name);Path[unique=true];SSL;Method(code);AuthenticationMethod(code);Format(code);ContentType(code);SpringBean;Script;SwaggerSummary;SwaggerDescription;SwaggerParameters[allownull=true];SwaggerRequestBody[allownull=true];SwaggerResponses[allownull=true]
                         ;easyDeploy;Easy;easy/deploy;false;GET;NONE;NONE;TEXT;;"easyExtensionService.reloadEasyExtensions();
 response.'responseCode' = 200;
 response.'body' = 'OK';
@@ -31,7 +31,7 @@ return response"
         }
     }
 }"
-                        ;getPrice;Easy;getPrice;true;GET;NONE;NONE;JSON;priceController;;;;"[
+                        ;easyGetPrice;Easy;easyGetPrice;true;GET;NONE;NONE;JSON;priceController;;;;"[
     {
         ""in"":""query"",
         ""name"":""code"",
