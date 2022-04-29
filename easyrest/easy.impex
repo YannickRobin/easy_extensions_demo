@@ -51,4 +51,5 @@ return response"
             }
         }
     }
-}"
+}",
+                        ;easyGetWidget;Easy;easyGetWidget;true;GET;NONE;NONE;JSON;easyGetWidgetController;;;;;;

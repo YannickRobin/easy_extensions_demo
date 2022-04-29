@@ -1,5 +1,6 @@
 {
     "name" : "easyrest",
     "version" :  "0.0.1",
-    "init" : ""    
+    "groovy_main_path" :  "src/main/groovy",
+    "groovy_test_path" :  "src/test/groovy"
 }
