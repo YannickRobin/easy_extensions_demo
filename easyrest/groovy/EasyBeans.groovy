@@ -1,8 +1,8 @@
 import org.slf4j.LoggerFactory
 import org.springframework.beans.factory.groovy.GroovyBeanDefinitionReader
 
-LOG = LoggerFactory.getLogger("helloworld");
-LOG.debug('Register Spring beans');
+LOG = LoggerFactory.getLogger("easyrest");
+LOG.info('Registering Spring beans...');
 
 def reader = new GroovyBeanDefinitionReader(spring.getBeanFactory())
 
@@ -14,3 +14,5 @@ reader.beans {
         easyGetWidgetService = easyGetWidgetService
     }
 }
+
+LOG.info('Spring beans registered');

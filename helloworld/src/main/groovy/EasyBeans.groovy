@@ -2,7 +2,7 @@ import org.slf4j.LoggerFactory
 import org.springframework.beans.factory.groovy.GroovyBeanDefinitionReader
 
 LOG = LoggerFactory.getLogger("helloworld");
-LOG.debug('Register Spring beans');
+LOG.info('Registering Spring beans...');
 
 def reader = new GroovyBeanDefinitionReader(spring.getBeanFactory())
 
@@ -21,3 +21,5 @@ reader.beans {
         productService = spring.getBean("productService")
     }
 }
+
+LOG.info('Spring beans registered');
