@@ -1,7 +1,7 @@
 package controller;
 
 import com.sap.cx.boosters.easyrest.controller.EasyRestServiceController;
-import service.EasyRestGetWidgetService;
+import service.EasyGetWidgetService;
 import java.util.Map;
 
 class EasyGetWidgetController implements EasyRestServiceController {
