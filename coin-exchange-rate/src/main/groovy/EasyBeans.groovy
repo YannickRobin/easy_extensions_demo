@@ -8,9 +8,9 @@ def reader = new GroovyBeanDefinitionReader(spring.getBeanFactory())
 
 reader.beans {
     priceService(service.CoinPriceService) {
+        configurationService = spring.getBean("configurationService")        
     }
     priceController(controller.PriceController) {
-        configurationService = spring.getBean("configurationService")
         priceService = priceService
         catalogVersionService = spring.getBean("catalogVersionService")
         productService = spring.getBean("productService")
