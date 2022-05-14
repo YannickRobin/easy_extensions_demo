@@ -13,13 +13,6 @@ reader.beans {
     greeterController(controller.GreeterController) {
         greeterService = greeterService
     }
-    priceService(service.EasyPriceService) {
-    }
-    priceController(controller.PriceController) {
-        priceService = priceService
-        catalogVersionService = spring.getBean("catalogVersionService")
-        productService = spring.getBean("productService")
-    }
 }
 
 LOG.info('Spring beans registered');
