@@ -10,6 +10,7 @@ import org.apache.commons.collections.CollectionUtils;
 class CoinPriceService extends DefaultPriceService {
 
     def LOG = org.slf4j.LoggerFactory.getLogger("CoinPriceService");
+    def configurationService;
     def enabled = true;
 
     public List<PriceInformation> getPriceInformationsForProduct(ProductModel product) {     
@@ -51,7 +52,7 @@ class CoinPriceService extends DefaultPriceService {
     BigDecimal getRateFromCoinAPI(currencyFrom, currencyTo) {
         def restTemplate = new org.springframework.web.client.RestTemplate();
         restTemplate.execute("https://rest.coinapi.io/v1/exchangerate/" + currencyFrom + '/' + currencyTo, org.springframework.http.HttpMethod.GET, 
-                            {  request -> request.headers.add('X-CoinAPI-Key', '70A71F94-76AC-496C-9193-3700E25DD4FB') }, 
+                            {  request -> request.headers.add('X-CoinAPI-Key', configurationService.getConfiguration().getString("easy.coin-exchange-rate.coin-api-key");) }, 
                             {
                                 def parser = new groovy.json.JsonSlurper()
                                 def jsonBody = parser.parseText("$it.body.text")

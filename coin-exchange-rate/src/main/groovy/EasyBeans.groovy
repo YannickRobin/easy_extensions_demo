@@ -10,6 +10,7 @@ reader.beans {
     priceService(service.CoinPriceService) {
     }
     priceController(controller.PriceController) {
+        configurationService = spring.getBean("configurationService")
         priceService = priceService
         catalogVersionService = spring.getBean("catalogVersionService")
         productService = spring.getBean("productService")
