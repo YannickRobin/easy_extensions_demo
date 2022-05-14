@@ -52,7 +52,7 @@ class CoinPriceService extends DefaultPriceService {
     BigDecimal getRateFromCoinAPI(currencyFrom, currencyTo) {
         def restTemplate = new org.springframework.web.client.RestTemplate();
         restTemplate.execute("https://rest.coinapi.io/v1/exchangerate/" + currencyFrom + '/' + currencyTo, org.springframework.http.HttpMethod.GET, 
-                            {  request -> request.headers.add('X-CoinAPI-Key', configurationService.getConfiguration().getString("easy.coin-exchange-rate.coin-api-key");) }, 
+                            {  request -> request.headers.add('X-CoinAPI-Key', configurationService.getConfiguration().getString("easy.coin-exchange-rate.coin-api-key")) }, 
                             {
                                 def parser = new groovy.json.JsonSlurper()
                                 def jsonBody = parser.parseText("$it.body.text")
