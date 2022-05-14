@@ -26,13 +26,13 @@ class CoinPriceService extends DefaultPriceService {
                 def currency = priceValue.getCurrencyIso();
                 if (currency.equals('USD'))
                 {
-                    def priceValueCurrencyTo = convert(priceValue, 'USD', 'EUR');
+                    def priceValueCurrencyTo = convert(priceValue, 'USD', 'BTC');
                     def priceCurrencyTo = new PriceInformation(price.getQualifiers(), priceValueCurrencyTo);
                     prices[index] = priceCurrencyTo;
                 }
                 else if (currency.equals('EUR'))
                 {
-                    def priceValueCurrencyTo = convert(priceValue, 'EUR', 'USD');
+                    def priceValueCurrencyTo = convert(priceValue, 'EUR', 'BTC');
                     def priceCurrencyTo = new PriceInformation(price.getQualifiers(), priceValueCurrencyTo);
                     prices[index] = priceCurrencyTo;
                 }
