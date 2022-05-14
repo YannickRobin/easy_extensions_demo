@@ -44,11 +44,25 @@ class CoinPriceService extends DefaultPriceService {
     def convert(priceValue, currencyFrom, currencyTo)
     {
         def priceFrom = Math.round(priceValue.getValue()*100)/100;
-        def priceTo = priceFrom * getRateFromExternalExchangeService(currencyFrom, currencyTo);
+        def priceTo = priceFrom * getRateFromCoinAPI(currencyFrom, currencyTo);
         return new PriceValue(currencyTo, priceTo, true);
     }
 
-    BigDecimal getRateFromExternalExchangeService(currencyFrom, currencyTo) {
+    BigDecimal getRateFromCoinAPI(currencyFrom, currencyTo) {
+        def restTemplate = new org.springframework.web.client.RestTemplate();
+        restTemplate.execute("https://rest.coinapi.io/v1/exchangerate/" + currencyFrom + '/' + currencyTo, org.springframework.http.HttpMethod.GET, 
+                            {  request -> request.headers.add('X-CoinAPI-Key', '70A71F94-76AC-496C-9193-3700E25DD4FB') }, 
+                            {
+                                def parser = new groovy.json.JsonSlurper()
+                                def jsonBody = parser.parseText("$it.body.text")
+                                def rate = jsonBody.get("rate")
+                                //LOG.info(rate.toString())
+                                return rate
+                            }
+        )
+    }
+
+    BigDecimal getRateFromExchangeRatePlatform(currencyFrom, currencyTo) {
         def restTemplate = new org.springframework.web.client.RestTemplate()
         restTemplate.execute("https://api.exchangerate.host/latest?base=" + currencyFrom + "&symbols=" + currencyTo, org.springframework.http.HttpMethod.GET, {}, {
             def parser = new groovy.json.JsonSlurper()
