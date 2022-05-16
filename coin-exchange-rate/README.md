@@ -14,3 +14,5 @@ catVersion = catalogVersionService.getCatalogVersion("Default", "Staged");
 product = productService.getProductForCode(catVersion, "Product1");
 println priceService.getPriceInformationsForProduct(product);
 ```
+
+<br/>
