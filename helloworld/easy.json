@@ -1,5 +1,6 @@
 {
-    "name" : "helloworld",
+    "id" : "helloworld",
+    "name" : "Hello World",
     "version" :  "0.0.1",
     "groovy_main_path" :  "src/main/groovy",
     "groovy_test_path" :  "src/test/groovy",    

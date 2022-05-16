@@ -1,8 +1,9 @@
 {
-    "name" : "CoinExchangeRate",
-    "description" : "CoinExchangeRate is a demo extension that provides live exchange rates with cryptocurrency markets",
-    "version" :  "0.0.1",
-    "icon" : "bitcoin.png",
+    "id" : "CoinExchangeRate",
+    "version" :  "0.0.1",   
+    "name" : "Coin Exchange Rate",
+    "icon" : "bitcoin.png",     
+    "description" : "Coin Exchange Rate is a demo extension that provides live exchange rates with cryptocurrency markets",
     "groovy_main_path" :  "src/main/groovy",
     "groovy_test_path" :  "src/test/groovy",    
     "init" : "Init.groovy"
