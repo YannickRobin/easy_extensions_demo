@@ -1,2 +1,7 @@
 demo/gradle.properties
 .DS_Store
+.idea/.gitignore
+.idea/easy_extensions_demo.iml
+.idea/hybrisProjectSettings.xml
+.idea/modules.xml
+.idea/vcs.xml

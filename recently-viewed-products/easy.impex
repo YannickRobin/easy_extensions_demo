@@ -1,0 +1,26 @@
+$catalog = electronics-spaContentCatalog
+$version = Staged
+$catalogVersion = catalogVersion(catalog(id[default=$catalog]),version[default=$version])[default=$catalog:$version]
+
+INSERT_UPDATE ContentSlotName;name[unique=true];template(uid,$catalogVersion)[unique=true]
+;RecentlyViewed;ProductDetailsPageTemplate
+
+INSERT_UPDATE ContentSlot;uid[unique=true];$catalogVersion[unique=true];name;active[default=true]
+;RecentlyViewedSlot;;Recently Viewed Slot
+
+INSERT_UPDATE ContentSlotForTemplate;uid[unique=true];$catalogVersion[unique=true];pageTemplate(uid,$catalogVersion)[unique=true];position[unique=true];allowOverwrite[default=true]
+;RecentlyViewedSlot-ProductDetailsPageTemplate;;ProductDetailsPageTemplate;RecentlyViewed
+
+INSERT_UPDATE EasyCMSComponent;uid[unique=true];$catalogVersion;configurations(key, value);contentSlots(uid,$catalogVersion)
+;RecentlyViewedProducts;;title->"Recently viewed products ...";RecentlyViewedSlot,Section3Slot-Homepage
+
+INSERT_UPDATE EasyRest;Name[unique=true];Path;SSL[default=true];Method(code);AuthenticationMode(code);Format(code);ContentType(code);CSRF[default=false];SpringBean;SwaggerSummary;SwaggerDescription;SwaggerParameters;
+;recentlyviewedproducts;"recentlyviewedproducts/{baseSiteId}";;GET;OAuth;NONE;JSON;;recentlyViewedProductsController;"Retrieves the recently viewed products for the current customer";"Retrieves the recently viewed products for the current customer at a given website";"
+    {
+        ""in"":""path"",
+        ""name"":""baseSiteId"",
+        ""description"":""The base site id"",
+        ""required"":true,
+        ""type"":""string""
+    }
+]"

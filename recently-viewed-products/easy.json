@@ -1,0 +1,10 @@
+{
+    "id" : "RecentlyViewedProducts",
+    "version" :  "0.0.1",   
+    "name" : "Recently Viewed Products",
+    "icon" : "recentlyviewed.png",     
+    "description" : "Displays the recently viewed products as a carousel based on the recently viewed product ids captured in an external service",
+    "groovy_main_path" :  "src/main/groovy",
+    "groovy_test_path" :  "src/test/groovy",    
+    "init" : "Init.groovy"
+}
