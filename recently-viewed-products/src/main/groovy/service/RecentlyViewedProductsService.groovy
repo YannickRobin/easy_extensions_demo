@@ -22,7 +22,7 @@ class RecentlyViewedProductsService {
             def restClient = new RESTClient(endPointHost);
             def endPointBasePath = configurationService.getConfiguration().getString("easy.recentlyviewedproducts.endpoint.basePath","/api/recentProducts");
             def path = endPointBasePath + "/" + userService.getCurrentUser().getUid();
-            def restResponse = client.get(path: path);
+            def restResponse = restClient.get(path: path);
             if (restResponse.statusLine.statusCode == 200) {
                 def recentlyViewedProductCodes = restResponse.data.productCodes;
                 // Retrieve the product data for product ids
