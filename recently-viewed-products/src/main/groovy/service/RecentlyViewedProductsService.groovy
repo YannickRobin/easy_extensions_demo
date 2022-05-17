@@ -19,7 +19,7 @@ class RecentlyViewedProductsService {
         def baseSite = baseSiteService.getBaseSiteForUID(baseSiteId);
         if(baseSite != null){
             def endPointHost = configurationService.getConfiguration().getString("easy.recentlyviewedproducts.endpoint.host","http://localhost:3001");
-            def restClient = new RESTClient(endPoint);
+            def restClient = new RESTClient(endPointHost);
             def endPointBasePath = configurationService.getConfiguration().getString("easy.recentlyviewedproducts.endpoint.basePath","/api/recentProducts");
             def path = endPointBasePath + + "/" + userService.getCurrentUser().getUid();
             def restResponse = client.get(path: path);
