@@ -15,7 +15,7 @@ class RecentlyViewedProductsService {
     def enabled = true;
 
     public List<String> getRecentlyViewedProducts(def baseSiteId){
-        def recentlyViewedProducts = new ArratList<String>();
+        def recentlyViewedProducts = new ArrayList<String>();
         def baseSite = baseSiteService.getBaseSiteForUID(baseSiteId);
         if(baseSite != null){
             def endPointHost = configurationService.getConfiguration().getString("easy.recentlyviewedproducts.endpoint.host","http://localhost:3001");
