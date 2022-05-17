@@ -21,7 +21,7 @@ class RecentlyViewedProductsService {
             def endPointHost = configurationService.getConfiguration().getString("easy.recentlyviewedproducts.endpoint.host","http://localhost:3001");
             def restClient = new RESTClient(endPointHost);
             def endPointBasePath = configurationService.getConfiguration().getString("easy.recentlyviewedproducts.endpoint.basePath","/api/recentProducts");
-            def path = endPointBasePath + + "/" + userService.getCurrentUser().getUid();
+            def path = endPointBasePath + "/" + userService.getCurrentUser().getUid();
             def restResponse = client.get(path: path);
             if (restResponse.statusLine.statusCode == 200) {
                 def recentlyViewedProductCodes = restResponse.data.productCodes;
