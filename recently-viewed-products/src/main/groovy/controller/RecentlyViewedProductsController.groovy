@@ -14,7 +14,7 @@ class RecentlyViewedProductsController implements EasyRestServiceController {
         def baseSiteId = ctx.pathParameters.baseSiteId;
 
         def recentlyViewedProducts = recentlyViewedProductsService.getRecentlyViewedProducts(baseSiteId);
-        LOG.info('Prices :' + prices);
+        LOG.info('recentlyViewedProducts :' + recentlyViewedProducts);
 
         response.'responseCode' = 200;
 
