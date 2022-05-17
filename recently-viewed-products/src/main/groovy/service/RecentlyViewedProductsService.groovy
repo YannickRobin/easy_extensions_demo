@@ -22,14 +22,18 @@ class RecentlyViewedProductsService {
             def restClient = new RESTClient(endPointHost);
             def endPointBasePath = configurationService.getConfiguration().getString("easy.recentlyviewedproducts.endpoint.basePath","/api/recentProducts");
             def path = endPointBasePath + "/" + userService.getCurrentUser().getUid();
-            def restResponse = restClient.get(path: path);
-            if (restResponse.statusLine.statusCode == 200) {
-                def recentlyViewedProductCodes = restResponse.data.productCodes;
-                // Retrieve the product data for product ids
-                recentlyViewedProductCodes.each {
-                    recentlyViewedProducts.add(it.productCode);
-                }
-            }
+	    try{
+	    	def restResponse = restClient.get(path: path);
+	    	if (restResponse.statusLine.statusCode == 200) {
+			def recentlyViewedProductCodes = restResponse.data.productCodes;
+			// Retrieve the product data for product ids
+			recentlyViewedProductCodes.each {
+		    		recentlyViewedProducts.add(it.productCode);
+			}
+	    	}
+	    }catch(Exception ex){
+		    LOG.debug("Error from the endpoint", ex);
+	    }
         }else{
             LOG.error("No base site found with id: {}", baseSiteId);
         }
