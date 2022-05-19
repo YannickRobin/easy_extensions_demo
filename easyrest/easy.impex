@@ -10,46 +10,4 @@ return response"
 response.'responseCode' = 200;
 response.'body' = 'OK';
 return response"
-                        ;easyHelloWorld;Easy;easyHelloWorld;true;GET;NONE;NONE;TEXT;greeterController;;;;"[
-    {
-        ""in"":""query"",
-        ""name"":""firstname"",
-        ""description"":""Your firstname"",
-        ""required"":true,
-        ""type"":""string""
-    }
-]";;"{
-""200"":
-    {
-        ""description"" : ""Hello message"",
-        ""content"" : {
-            ""text/plain"" : {
-                ""schema"" : {
-                    ""type"" : ""string""
-                }
-            }
-        }
-    }
-}"
-                        ;easyGetPrice;Easy;easyGetPrice;true;GET;NONE;NONE;JSON;priceController;;;;"[
-    {
-        ""in"":""query"",
-        ""name"":""code"",
-        ""description"":""The product code"",
-        ""required"":true,
-        ""type"":""string""
-    }
-]";;"{
-""200"":
-    {
-        ""description"" : ""Array of price"",
-        ""content"" : {
-            ""application/json"" : {
-                ""schema"" : {
-                    ""type"" : ""array""
-                }
-            }
-        }
-    }
-}"
                         ;easyGetWidget;Easy;easyGetWidget;true;GET;NONE;NONE;JSON;easyGetWidgetController;;;;;;
