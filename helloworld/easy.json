@@ -2,6 +2,7 @@
     "id" : "helloworld",
     "name" : "Hello World",
     "version" :  "0.0.1",
+    "icon" : "https://cdn.iconscout.com/icon/premium/png-512-thumb/hello-world-3885454-3226925.png",
     "groovy_main_path" :  "src/main/groovy",
     "groovy_test_path" :  "src/test/groovy",    
     "init" : "Init.groovy"
