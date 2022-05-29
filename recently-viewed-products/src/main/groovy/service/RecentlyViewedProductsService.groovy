@@ -29,8 +29,10 @@ class RecentlyViewedProductsService {
 			def recentlyViewedProductCodes = restResponse.data.productCodes;
 			// Retrieve the product data for product ids
 			recentlyViewedProductCodes.each {
-				if(null==currentProductCode || !it.equals(currentProductCode)){
-		    			recentlyViewedProducts.add(it.productCode);
+				if(it.equals(currentProductCode)){
+		    		    LOG.info("Current product excluded");	
+				}else{
+				    recentlyViewedProducts.add(it.productCode);
 				}
 			}
 	    	}
