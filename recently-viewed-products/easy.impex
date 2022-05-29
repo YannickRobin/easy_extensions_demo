@@ -32,7 +32,7 @@ INSERT_UPDATE EasyRest;Name[unique=true];Path;SSL[default=true];Method(code);Aut
                }
             },
             ""required"":[
-               "baseSiteId"
+               ""baseSiteId""
             ]
          }
       }
