@@ -14,7 +14,7 @@ class RecentlyViewedProductsService {
     def userService;
     def enabled = true;
 
-    public List<String> getRecentlyViewedProducts(def baseSiteId){
+    public List<String> getRecentlyViewedProducts(def baseSiteId, def currentProductCode){
         def recentlyViewedProducts = new ArrayList<String>();
         def baseSite = baseSiteService.getBaseSiteForUID(baseSiteId);
         if(baseSite != null){
@@ -29,7 +29,9 @@ class RecentlyViewedProductsService {
 			def recentlyViewedProductCodes = restResponse.data.productCodes;
 			// Retrieve the product data for product ids
 			recentlyViewedProductCodes.each {
-		    		recentlyViewedProducts.add(it.productCode);
+				if(null!=currentProductCode && !it.equals(currentProductCode)){
+		    			recentlyViewedProducts.add(it.productCode);
+				}
 			}
 	    	}
 	    }catch(Exception ex){
