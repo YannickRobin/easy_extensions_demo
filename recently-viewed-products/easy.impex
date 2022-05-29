@@ -15,12 +15,27 @@ INSERT_UPDATE EasyCMSComponent;uid[unique=true];$catalogVersion[unique=true];nam
 ;RecentlyViewedProducts;;Recently viewed products;title->Recently viewed products ...;RecentlyViewedSlot,Section3Slot-Homepage
 
 INSERT_UPDATE EasyRest;Name[unique=true];Path;SSL[default=true];Method(code);AuthenticationMethod(code);Format(code);ContentType(code);CSRF[default=false];SpringBean;SwaggerSummary;SwaggerDescription;SwaggerParameters;
-;recentlyviewedproducts;"recentlyviewedproducts/{baseSiteId}";;GET;OAuth;NONE;JSON;;recentlyViewedProductsController;"Retrieves the recently viewed products for the current customer";"Retrieves the recently viewed products for the current customer at a given website";"
+;recentlyviewedproducts;"recentlyviewedproducts";;POST;OAuth;JSON;JSON;;recentlyViewedProductsController;"Retrieves the recently viewed products for the current customer";"Retrieves the recently viewed products for the current customer at a given website";"
     {
-        ""in"":""path"",
-        ""name"":""baseSiteId"",
-        ""description"":""The base site id"",
-        ""required"":true,
-        ""type"":""string""
-    }
+   ""content"":{
+      ""application/json"":{
+         ""schema"":{
+            ""type"":""object"",
+            ""properties"":{
+               ""baseSiteId"":{
+                  ""description"":""The base site uid"",
+                  ""type"":""string""
+               },
+               ""currentProductCode"":{
+                  ""description"":""Current product code"",
+                  ""type"":""string""
+               }
+            },
+            ""required"":[
+               ""baseSiteId""
+            ]
+         }
+      }
+   }
+}
 ]"

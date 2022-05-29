@@ -11,9 +11,11 @@ class RecentlyViewedProductsController implements EasyRestServiceController {
 
     Map execute(Map ctx) {
         def response = [:];
-        def baseSiteId = ctx.pathParameters.baseSiteId;
+        //def baseSiteId = ctx.pathParameters.baseSiteId;
+        def baseSiteId = ctx.body.baseSiteId;
+        def currentProductCode = ctx.body.currentProductCode;
 
-        def recentlyViewedProducts = recentlyViewedProductsService.getRecentlyViewedProducts(baseSiteId);
+        def recentlyViewedProducts = recentlyViewedProductsService.getRecentlyViewedProducts(baseSiteId, currentProductCode);
         LOG.info('recentlyViewedProducts :' + recentlyViewedProducts);
 
         response.'responseCode' = 200;
