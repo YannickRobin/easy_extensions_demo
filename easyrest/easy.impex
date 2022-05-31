@@ -10,4 +10,12 @@ return response"
 response.'responseCode' = 200;
 response.'body' = 'OK';
 return response"
+                        ;easyInstallExtension;Easy;easy/installExtension;false;GET;NONE;NONE;TEXT;;"log = org.slf4j.LoggerFactory.getLogger('easyrest');
+log.info('repoCode: ' + parameters.repoCode);
+log.info('extensionId: ' + parameters.extensionId);
+
+easyExtensionService.installEasyExtension(parameters.repoCode, parameters.extensionId);
+response.'responseCode' = 200;
+response.'body' = 'OK';
+return response"
                         ;easyGetWidget;Easy;easyGetWidget;true;GET;NONE;NONE;JSON;easyGetWidgetController;;;;;;
