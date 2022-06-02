@@ -9,7 +9,7 @@ INSERT_UPDATE EasyRest  ;Name[unique=true];easyRestGroup(name);Path[unique=true]
         ""description"":""The product code"",
         ""required"":true,
         ""type"":""string"",
-        ""default"":""DSC-W180""
+        ""default"":""3325048""
     },
     {
         ""in"":""query"",
