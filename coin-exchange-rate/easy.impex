@@ -1,3 +1,7 @@
+# Currencies
+INSERT_UPDATE Currency;isocode[unique=true];conversion;digits;symbol
+;BTC;1;2;BTC
+
 INSERT_UPDATE EasyRestGroup;Name[unique=true]
                            ;Easy
 
