@@ -13,8 +13,8 @@ INSERT_UPDATE EasyRest  ;Name[unique=true];easyRestGroup(name);Path[unique=true]
     },
     {
         ""in"":""query"",
-        ""name"":""catalog"",
-        ""description"":""The catalog"",
+        ""name"":""catalogId"",
+        ""description"":""The catalog id"",
         ""required"":true,
         ""type"":""string"",
         ""default"":""electronicsProductCatalog""
