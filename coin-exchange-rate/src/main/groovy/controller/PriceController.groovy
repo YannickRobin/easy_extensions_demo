@@ -14,7 +14,7 @@ class PriceController implements EasyRestServiceController {
     Map execute(Map ctx) {
         def response = [:];
 
-        def catVersion = catalogVersionService.getCatalogVersion(ctx.parameters.catalog, ctx.parameters.catalogVersion);
+        def catVersion = catalogVersionService.getCatalogVersion(ctx.parameters.catalogId, ctx.parameters.catalogVersion);
         catalogVersionService.setSessionCatalogVersions(Collections.singleton(catVersion));
 
         def product = productService.getProductForCode(ctx.parameters.productCode);
