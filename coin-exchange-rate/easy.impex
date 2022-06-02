@@ -1,9 +1,9 @@
 # Currencies
-INSERT_UPDATE Currency;isocode[unique=true];name[lang=$lang];conversion;digits;symbol
+INSERT_UPDATE Currency;isocode[unique=true];name[lang=en];conversion;digits;symbol
 ;BTC;"Bitcoin";1;2;BTC
 
 INSERT_UPDATE BaseStore;uid[unique=true];currencies(isocode)
-;electronics-eu;JPY,USD,BTC;
+;electronics;JPY,USD,BTC;
 
 
 INSERT_UPDATE EasyRestGroup;Name[unique=true]
