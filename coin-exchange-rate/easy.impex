@@ -5,10 +5,27 @@ INSERT_UPDATE EasyRest  ;Name[unique=true];easyRestGroup(name);Path[unique=true]
                         ;easyGetPrice;Easy;easyGetPrice;true;GET;NONE;NONE;JSON;priceController;;;;"[
     {
         ""in"":""query"",
-        ""name"":""code"",
+        ""name"":""productCode"",
         ""description"":""The product code"",
         ""required"":true,
-        ""type"":""string""
+        ""type"":""string"",
+        ""default"":""DSC-W180""
+    },
+    {
+        ""in"":""query"",
+        ""name"":""catalog"",
+        ""description"":""The catalog"",
+        ""required"":true,
+        ""type"":""string"",
+        ""default"":""electronicsProductCatalog""
+    },
+    {
+        ""in"":""query"",
+        ""name"":""catalogVersion"",
+        ""description"":""The catalogue version"",
+        ""required"":true,
+        ""type"":""string"",
+        ""default"":""Online""
     }
 ]";;"{
 ""200"":
