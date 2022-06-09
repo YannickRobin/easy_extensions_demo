@@ -11,7 +11,7 @@ INSERT_UPDATE ContentSlot;uid[unique=true];$catalogVersion[unique=true];name;act
 INSERT_UPDATE ContentSlotForTemplate;uid[unique=true];$catalogVersion[unique=true];pageTemplate(uid,$catalogVersion)[unique=true];position[unique=true];contentSlot(uid,$catalogVersion)[unique=true];allowOverwrite[default=true]
 ;RecentlyViewedSlot-ProductDetailsPageTemplate;;ProductDetailsPageTemplate;RecentlyViewed;RecentlyViewedSlot
 
-INSERT_UPDATE EasyCMSComponent;uid[unique=true];$catalogVersion[unique=true];flexType;name;configurations(key, value);slots(uid,$catalogVersion)
+INSERT_UPDATE EasyCMSComponent;uid[unique=true];$catalogVersion[unique=true];name;flexType;configurations(key, value);slots(uid,$catalogVersion)
 ;RecentlyViewedProducts;;Recently viewed products;RecentlyViewedProducts;title->Recently viewed products ...;RecentlyViewedSlot,Section3Slot-Homepage
 
 INSERT_UPDATE EasyRest;Name[unique=true];Path;SSL[default=true];Method(code);AuthenticationMethod(code);Format(code);ContentType(code);CSRF[default=false];SpringBean;SwaggerSummary;SwaggerDescription;SwaggerRequestBody;
