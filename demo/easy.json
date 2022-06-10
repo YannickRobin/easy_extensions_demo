@@ -1,6 +1,6 @@
 {
     "id" : "demo",
-    "name" : "demo",
+    "name" : "Demo",
     "version" :  "0.0.1",
     "groovy_main_path" :  "lib/src/main/groovy",
     "groovy_test_path" :  "lib/src/test/groovy"   

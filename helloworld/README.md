@@ -3,7 +3,7 @@
 ## Overview
 This demo is a simple example of Easy extension.
 
-## Demo with hello world
+## Demo
 In this example, [GreeterService.groovy](/helloworld/src/main/groovy/GreeterService.groovy) is a cutom bean loaded from _helloworld_ extension.
 
 Execute the following script in HAC:
@@ -23,15 +23,4 @@ If you work with a remote SAP Commerce Cloud instance, change the message in [Gr
 ```groovy
 easyExtensionService.reloadEasyExtensions();
 println greeterService.sayHello('Yannick');
-```
-
-## Demo with price service
-In this example, _DefaultPriceService_ is overrided by [EasyPriceService.groovy](/helloworld/src/main/groovy/EasyPriceService.groovy) to convert price from Euro to USD.
-
-Execute the following script in HAC:
-
-```groovy
-catVersion = catalogVersionService.getCatalogVersion("Default", "Staged");
-product = productService.getProductForCode(catVersion, "Product1");
-println priceService.getPriceInformationsForProduct(product);
 ```

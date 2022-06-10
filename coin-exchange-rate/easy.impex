@@ -1,0 +1,50 @@
+# Currencies
+INSERT_UPDATE Currency;isocode[unique=true];name[lang=en];conversion;digits;symbol
+;BTC;"Bitcoin";1;2;BTC
+
+INSERT_UPDATE BaseStore;uid[unique=true];currencies(isocode)
+;electronics;JPY,USD,BTC;
+
+
+INSERT_UPDATE EasyRestGroup;Name[unique=true]
+                           ;Easy
+
+INSERT_UPDATE EasyRest  ;Name[unique=true];easyRestGroup(name);Path[unique=true];SSL;Method(code);AuthenticationMethod(code);Format(code);ContentType(code);SpringBean;Script;SwaggerSummary;SwaggerDescription;SwaggerParameters[allownull=true];SwaggerRequestBody[allownull=true];SwaggerResponses[allownull=true]
+                        ;easyGetPrice;Easy;easyGetPrice;true;GET;NONE;NONE;JSON;priceController;;;;"[
+    {
+        ""in"":""query"",
+        ""name"":""productCode"",
+        ""description"":""The product code"",
+        ""required"":true,
+        ""type"":""string"",
+        ""default"":""3325048""
+    },
+    {
+        ""in"":""query"",
+        ""name"":""catalogId"",
+        ""description"":""The catalog id"",
+        ""required"":true,
+        ""type"":""string"",
+        ""default"":""electronicsProductCatalog""
+    },
+    {
+        ""in"":""query"",
+        ""name"":""catalogVersion"",
+        ""description"":""The catalogue version"",
+        ""required"":true,
+        ""type"":""string"",
+        ""default"":""Online""
+    }
+]";;"{
+""200"":
+    {
+        ""description"" : ""Array of price"",
+        ""content"" : {
+            ""application/json"" : {
+                ""schema"" : {
+                    ""type"" : ""array""
+                }
+            }
+        }
+    }
+}"

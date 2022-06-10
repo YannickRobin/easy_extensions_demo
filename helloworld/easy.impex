@@ -4,3 +4,29 @@ $catalogVersion = catalogVersion(catalog(id[default=$catalog]),version[default=$
 
 INSERT_UPDATE CMSFlexComponent;uid[unique=true];$catalogVersion[unique=true];name;flexType;slots(uid,$catalogVersion)
 ;EasyHelloWorldComponent;;Easy Hello World Component;EasyHelloWorldComponent;Section3Slot-Homepage
+
+INSERT_UPDATE EasyRestGroup;Name[unique=true]
+                           ;Easy
+
+INSERT_UPDATE EasyRest  ;Name[unique=true];easyRestGroup(name);Path[unique=true];SSL;Method(code);AuthenticationMethod(code);Format(code);ContentType(code);SpringBean;Script;SwaggerSummary;SwaggerDescription;SwaggerParameters[allownull=true];SwaggerRequestBody[allownull=true];SwaggerResponses[allownull=true]
+                        ;easyHelloWorld;Easy;easyHelloWorld;true;GET;NONE;NONE;TEXT;greeterController;;;;"[
+    {
+        ""in"":""query"",
+        ""name"":""firstname"",
+        ""description"":""Your firstname"",
+        ""required"":true,
+        ""type"":""string""
+    }
+]";;"{
+""200"":
+    {
+        ""description"" : ""Hello message"",
+        ""content"" : {
+            ""text/plain"" : {
+                ""schema"" : {
+                    ""type"" : ""string""
+                }
+            }
+        }
+    }
+}"

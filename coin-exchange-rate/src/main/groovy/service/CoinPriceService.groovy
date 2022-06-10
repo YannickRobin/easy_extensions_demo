@@ -14,7 +14,8 @@ class CoinPriceService extends DefaultPriceService {
     def enabled = true;
 
     public List<PriceInformation> getPriceInformationsForProduct(ProductModel product) {     
-        def prices = super.getPriceInformationsForProduct(product);
+        LOG.info("Product " + product);
+	def prices = super.getPriceInformationsForProduct(product);
         if (!enabled)
             return prices;
 
