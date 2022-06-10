@@ -9,7 +9,7 @@ INSERT_UPDATE EasyRestGroup;Name[unique=true]
                            ;Easy
 
 INSERT_UPDATE EasyRest  ;Name[unique=true];easyRestGroup(name);Path[unique=true];SSL;Method(code);AuthenticationMethod(code);Format(code);ContentType(code);SpringBean;Script;SwaggerSummary;SwaggerDescription;SwaggerParameters[allownull=true];SwaggerRequestBody[allownull=true];SwaggerResponses[allownull=true]
-                        ;easyHelloWorld;Easy;easyHelloWorld;true;GET;NONE;NONE;TEXT;greeterController;;;;"[
+                        ;easyHelloWorld;Easy;easyHelloWorld;true;GET;NONE;NONE;JSON;greeterController;;;;"[
     {
         ""in"":""query"",
         ""name"":""firstname"",
