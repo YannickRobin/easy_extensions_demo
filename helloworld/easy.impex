@@ -1,3 +1,10 @@
+$catalog = electronics-spaContentCatalog
+$version = Staged
+$catalogVersion = catalogVersion(catalog(id[default=$catalog]),version[default=$version])[default=$catalog:$version]
+
+INSERT_UPDATE CMSFlexComponent;uid[unique=true];$catalogVersion[unique=true];name;flexType;slots(uid,$catalogVersion)
+;EasyHelloWorldComponent;;Easy Hello World Component;EasyHelloWorldComponent;Section3Slot-Homepage
+
 INSERT_UPDATE EasyRestGroup;Name[unique=true]
                            ;Easy
 

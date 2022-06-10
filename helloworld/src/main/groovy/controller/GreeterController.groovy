@@ -11,7 +11,7 @@ class GreeterController implements EasyRestServiceController {
     Map execute(Map ctx) {
         def response = [:];
         response.'responseCode' = 200;
-        response.'body' = greeterService.sayHello(ctx.parameters.firstname);
+        response.'body' = groovy.json.JsonOutput.toJson(greeterService.sayHello(ctx.parameters.firstname));
         return response
     }
 
