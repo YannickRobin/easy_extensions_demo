@@ -5,7 +5,7 @@ class GreeterService {
     def configurationService;
 
     String sayHello(firstName) {
-        def message =  "${getMessage()} ${firstName} for Booster 20th of June";
+        def message =  "${getMessage()} ${firstName} for Booster 18th of August";
         return message;
     }
 
