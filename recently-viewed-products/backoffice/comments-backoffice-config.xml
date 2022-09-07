@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ~ Copyright (c) 2022. SAP SE or an SAP affiliate company. All rights reserved.
+  -->
+
+<config xmlns="http://www.hybris.com/cockpit/config">
+    <context component="explorer-tree" parent="auto" merge-by="module" >
+        <n:explorer-tree xmlns:n="http://www.hybris.com/cockpitng/config/explorertree">
+            <n:navigation-node id="Comments" merge-mode="append" position="100">
+                <n:type-node id="hmc_typenode_comment" code="Comment"/>
+            </n:navigation-node>
+        </n:explorer-tree>
+    </context>
+
+    <context type="Comment">
+
+        <context component="listview" parent="GenericItem" merge-by="type">
+            <list-view:list-view xmlns:list-view="http://www.hybris.com/cockpitng/component/listView">
+                <list-view:column qualifier="subject" position="1"/>
+                <list-view:column qualifier="commentType" position="2"/>
+                <list-view:column qualifier="author" position="3"/>
+            </list-view:list-view>
+        </context>
+
+        <context component="editor-area" merge-by="type" parent="GenericItem">
+            <editorArea:editorArea xmlns:editorArea="http://www.hybris.com/cockpitng/component/editorArea">
+                <editorArea:essentials>
+                    <editorArea:essentialSection name="hmc.essential">
+                        <editorArea:attribute qualifier="code" />
+                        <editorArea:attribute qualifier="author" />
+                    </editorArea:essentialSection>
+                </editorArea:essentials>
+                <editorArea:tab name="hmc.tab.common">
+                    <editorArea:section name="hmc.properties">
+                        <editorArea:attribute qualifier="commentType"/>
+                        <editorArea:attribute qualifier="component"/>
+                        <editorArea:attribute qualifier="priority"/>
+                        <editorArea:attribute qualifier="subject"/>
+                        <editorArea:attribute qualifier="text"/>
+                    </editorArea:section>
+                </editorArea:tab>
+            </editorArea:editorArea>
+        </context>
+    </context>
+</config>
