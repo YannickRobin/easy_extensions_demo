@@ -6,19 +6,22 @@
 <config xmlns="http://www.hybris.com/cockpit/config">
     <context component="explorer-tree" parent="auto" merge-by="module" >
         <n:explorer-tree xmlns:n="http://www.hybris.com/cockpitng/config/explorertree">
-            <n:navigation-node id="Comments" merge-mode="append" position="100">
-                <n:type-node id="hmc_typenode_comment" code="Comment"/>
+            <n:navigation-node id="hmc_navnode_easy" merge-mode="append">
+                <n:navigation-node id="Events" merge-mode="append" position="3">
+                    <n:type-node id="Easy Event Logs" code="EasyEventLog"/>
+                </n:navigation-node>
             </n:navigation-node>
         </n:explorer-tree>
     </context>
 
-    <context type="Comment">
+    <context type="EasyEventLog">
 
         <context component="listview" parent="GenericItem" merge-by="type">
             <list-view:list-view xmlns:list-view="http://www.hybris.com/cockpitng/component/listView">
-                <list-view:column qualifier="subject" position="1"/>
-                <list-view:column qualifier="commentType" position="2"/>
-                <list-view:column qualifier="author" position="3"/>
+                <list-view:column qualifier="globalDeploymentId" position="1"/>
+                <list-view:column qualifier="deploymentId" position="2"/>
+                <list-view:column qualifier="user" position="3"/>
+                <list-view:column qualifier="status" position="3"/>
             </list-view:list-view>
         </context>
 
@@ -26,17 +29,20 @@
             <editorArea:editorArea xmlns:editorArea="http://www.hybris.com/cockpitng/component/editorArea">
                 <editorArea:essentials>
                     <editorArea:essentialSection name="hmc.essential">
-                        <editorArea:attribute qualifier="code" />
-                        <editorArea:attribute qualifier="author" />
+                        <editorArea:attribute qualifier="globalDeploymentId" />
+                        <editorArea:attribute qualifier="deploymentId" />
                     </editorArea:essentialSection>
                 </editorArea:essentials>
                 <editorArea:tab name="hmc.tab.common">
                     <editorArea:section name="hmc.properties">
-                        <editorArea:attribute qualifier="commentType"/>
-                        <editorArea:attribute qualifier="component"/>
-                        <editorArea:attribute qualifier="priority"/>
-                        <editorArea:attribute qualifier="subject"/>
-                        <editorArea:attribute qualifier="text"/>
+                        <editorArea:attribute qualifier="user"/>
+                        <editorArea:attribute qualifier="status"/>
+                        <editorArea:attribute qualifier="date"/>
+                        <editorArea:attribute qualifier="branch"/>
+                        <editorArea:attribute qualifier="commit"/>
+                        <editorArea:attribute qualifier="clusterId"/>
+                        <editorArea:attribute qualifier="clusterGroups"/>
+                        <editorArea:attribute qualifier="eventData"/>
                     </editorArea:section>
                 </editorArea:tab>
             </editorArea:editorArea>
